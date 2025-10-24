@@ -1,20 +1,20 @@
 <h1>ExpNo 8 : Solve Cryptarithmetic Problem,a CSP(Constraint Satisfaction Problem) using Python</h1> 
-<h3>Name:         </h3>
-<h3>Register Number   </h3>
-<H3>Aim:</H3>
+<h3>Name: Shanthosh G     </h3>
+<h3>Register Number: 2305003008   </h3>
+<H3>AIM:</H3>
 <p>
     To solve Cryptarithmetic Problem,a CSP(Constraint Satisfaction Problem) using Python
 </p>
-<h3>Procedure:</h3>
+<h3>PROCEDURE:</h3>
 Input and Output
-<br>Input:
+<br>INPUT:
 This algorithm will take three words.
 <br> B A S E<br>
     B A L L<br>
            ----------<br>
            G A M E S<br>
 
-Output:
+OUTPUT:
 It will show which letter holds which number from 0 – 9.
 For this case it is like this.
 
@@ -22,7 +22,7 @@ For this case it is like this.
               B A L L                         2 4 5 5
              ---------                       ---------
             G A M E S                       0 4 9 1 6
-Algorithm
+ALGORITHM:
 For this problem, we will define a node, which contains a letter and its corresponding values.<br>
 
 isValid(nodeList, count, word1, word2, word3)<br>
@@ -79,7 +79,7 @@ MORE = 1085<br>
 <hr>
 MONEY = 10652<br>
 
-## PROGRAM
+## PROGRAM:
 ```Python
 # -*- coding: utf-8 -*-
 """CSP.ipynb
@@ -122,11 +122,50 @@ else:
     print("No solution found.")
 ```
 
-## output
+## OUTPUT:
 
 ![379384647-a35e73a2-1f14-492a-b04d-4764aabfc740](https://github.com/user-attachments/assets/60bdf6c2-ba5f-4fa1-a5a4-b7ef1fde8052)
 
+## PROGRAM
+``` python
+from itertools import permutations
+
+def solve_cryptarithmetic():
+    letters = ('C', 'R', 'O', 'S', 'A', 'D', 'N', 'G', 'E')
+   
+    for perm in permutations(range(10), len(letters)):
+        mapping = dict(zip(letters, perm))
+
+        C, R, O, S, A, D, N, G, E = [mapping[ch] for ch in letters]
+
+        if C == 0 or R == 0 or D == 0:
+            continue
+
+        CROSS = 10000*C + 1000*R + 100*O + 10*S + S
+        ROADS = 10000*R + 1000*O + 100*A + 10*D + S
+        DANGER = 100000*D + 10000*A + 1000*N + 100*G + 10*E + R
+
+        if CROSS + ROADS == DANGER:
+            return CROSS, ROADS, DANGER, mapping
+
+    return None
+
+solution = solve_cryptarithmetic()
+
+if solution:
+    CROSS, ROADS, DANGER, mapping = solution
+    print(f'CROSS = {CROSS}')
+    print(f'ROADS = {ROADS}')
+    print(f'DANGER = {DANGER}')
+    print(f'Letter Mapping: {mapping}')
+else:
+    print("No solution found.")
+```
+### OUTPUT:
+
+<img width="809" height="268" alt="image" src="https://github.com/user-attachments/assets/718e2d05-7c10-4a3f-b307-57e289676774" />
+
 
 <hr>
-<h2>Result:</h2>
+<h2>RESULT:</h2>
 <p> Thus a Cryptarithmetic Problem was solved using Python successfully</p>
