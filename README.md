@@ -3,17 +3,12 @@
 ### Name: Shanthosh G
 ### Register Number: 2305003008
 
----
-
 ## AIM:  
 To solve a Cryptarithmetic Problem, a type of Constraint Satisfaction Problem (CSP), using Python.  
-
----
 
 ## Problem Description:  
 
 A cryptarithmetic puzzle assigns unique digits (0–9) to letters so that a given arithmetic equation holds true.  
-
 Example:  
 
 ```
@@ -25,8 +20,6 @@ G A M E S
 
 The goal is to find the digit substitution that satisfies this equation.  
 
----
-
 ## ALGORITHM:  
 
 ### Function: `isValid(nodeList, count, word1, word2, word3)`
@@ -37,15 +30,11 @@ A list of nodes containing letters and their possible numeric values, number of 
 **Output:**  
 True if the sum of the numeric values of `word1` and `word2` equals that of `word3`, else False.  
 
----
-
 ### Step-by-Step Logic
 1. Initialize multipliers for each word (unit, tens, hundreds, etc.).
 2. Convert each letter to its assigned number.
 3. Compute numeric values of all three words.
 4. If the equation `word1 + word2 = word3` holds, return True; else return False.  
-
----
 
 ## Sample Program:
 
@@ -99,11 +88,9 @@ SEND = 9567
 MORE = 1085  
 MONEY = 10652
 ```
-
 <img width="443" height="204" alt="image" src="https://github.com/user-attachments/assets/44872348-0c22-45bb-a718-7c318b976c98" />
 
 ## PROGRAM:
-
 ```python
 from itertools import permutations
 
@@ -137,11 +124,8 @@ else:
     print("No solution found.")
 
 ```
-
 ## OUTPUT:
-
 <img width="840" height="97" alt="image" src="https://github.com/user-attachments/assets/71869433-2b7a-4474-91b7-457b032dc8f9" />
 
 ## RESULT:
-
 Thus, a Cryptarithmetic Problem was successfully solved using Python.
