@@ -1,4 +1,4 @@
-# Exp No: 8 — Solve Cryptarithmetic Problem (Constraint Satisfaction Problem) using Python  
+# EX No: 8 — Solve Cryptarithmetic Problem (Constraint Satisfaction Problem) using Python  
 
 ### Name: Shanthosh G
 ### Register Number: 2305003008
